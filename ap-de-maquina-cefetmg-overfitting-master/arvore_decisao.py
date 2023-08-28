@@ -88,9 +88,9 @@ def plot_performance_min_samples(X_treino,y_treino,X_teste,y_teste):
 
     for min_samples in np.arange(0.001,0.7,0.01):
         #complete a linha abaixo com a função e parametros corretos para calcular a acurácia no teste
-        y_predicted, ac_teste = faz_classificacao(X_teste,y_teste,X_treino,y_treino,min_samples)
+        y_predicted, ac_teste = faz_classificacao(X_treino,y_treino,X_teste,y_teste,min_samples)
         #complete a linha abaixo com a função e parametros corretos para calcular a acurácia no treino
-        y_predicted, ac_treino = faz_classificacao(X_treino,y_treino,X_teste,y_teste,min_samples)
+        y_predicted, ac_treino = faz_classificacao(X_treino,y_treino,X_treino,X_treino,min_samples)
 
         #adiciona a acuracia no treino, no teste e o parametro min_samples
         arr_ac_treino.append(ac_treino)
